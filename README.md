@@ -4,7 +4,7 @@ Salesforce DX extension for retrieving Metadata using the active credentials.
 The extension includes different commands for different Metadata types.
 There is no need to use a package.xml to perform the retrieve.
 
-![](https://gfycat.com/equatorialaptfalcon)
+![SFDX Retrieve Demo](demo/sfdx-retrieve-demo.gif)
 
 ## Features
 
