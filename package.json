@@ -3,7 +3,7 @@
 	"publisher": "aojedo",
 	"displayName": "SFDX Retrieve",
 	"description": "Retrieve Metadata by type using SFDX",
-	"version": "0.0.2",
+	"version": "1.0.0",
 	"engines": {
 		"vscode": "^1.41.0"
 	},
@@ -11,29 +11,14 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.sfdx-retrieve-classes", 
-		"onCommand:extension.sfdx-retrieve-triggers", 
-		"onCommand:extension.sfdx-retrieve-lwc", 
-		"onCommand:extension.sfdx-retrieve-pages"
+		"onCommand:extension.sfdx-retrieve"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.sfdx-retrieve-classes",
-				"title": "SFDX Retrieve Apex Classes"
-			},
-			{
-				"command": "extension.sfdx-retrieve-triggers",
-				"title": "SFDX Retrieve Apex Triggers"
-			},
-			{
-				"command": "extension.sfdx-retrieve-lwc",
-				"title": "SFDX Retrieve LWC"
-			},
-			{
-				"command": "extension.sfdx-retrieve-pages",
-				"title": "SFDX Retrieve Visualforce Pages"
+				"command": "extension.sfdx-retrieve",
+				"title": "SFDX Retrieve Metadata"
 			}
 		]
 	},

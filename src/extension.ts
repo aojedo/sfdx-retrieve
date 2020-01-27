@@ -13,57 +13,37 @@ export function activate(context: vscode.ExtensionContext) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
-	let classes = vscode.commands.registerCommand('extension.sfdx-retrieve-classes', () => {
-		// The code you place here will be executed every time your command is executed
+
+	vscode.commands.registerCommand('extension.sfdx-retrieve', async () => {
+		let items = ["Apex Classes", "Apex Triggers", "VF Pages", "Lightning Components", "Static Resources"];
 		let activeTerminal = setupTerminal();
-		if (activeTerminal) {
-			activeTerminal.sendText('sfdx force:source:retrieve -m ApexClass');
-		}
-
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Retrieve Apex Classes executed!');
-	});
-
-	context.subscriptions.push(classes);
-
-	let triggers = vscode.commands.registerCommand('extension.sfdx-retrieve-triggers', () => {
-		// The code you place here will be executed every time your command is executed
-		let activeTerminal = setupTerminal();
-		if (activeTerminal) {
-			activeTerminal.sendText('sfdx force:source:retrieve -m ApexTrigger');
-		}
-
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Retrieve Apex Triggers executed!');
-	});
-
-	context.subscriptions.push(triggers);
-
-	let webComponents = vscode.commands.registerCommand('extension.sfdx-retrieve-lwc', () => {
-		// The code you place here will be executed every time your command is executed
-		let activeTerminal = setupTerminal();
-		if (activeTerminal) {
-			activeTerminal.sendText('sfdx force:source:retrieve -m LightningComponentBundle');
-		}
-
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Retrieve Lightning Web Components executed!');
-	});
-
-	context.subscriptions.push(webComponents);
-
-	let visualforce = vscode.commands.registerCommand('extension.sfdx-retrieve-pages', () => {
-		// The code you place here will be executed every time your command is executed
-		let activeTerminal = setupTerminal();
-		if (activeTerminal) {
-			activeTerminal.sendText('sfdx force:source:retrieve -m ApexPage');
-		}
-
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Retrieve Visualforce Pages executed!');
-	});
-
-	context.subscriptions.push(visualforce);
+		vscode.window.showQuickPick(items, {
+			onDidSelectItem: (item) => {
+			}
+		}).then((selection) => {
+			// User made final selection
+			if (!selection) {
+				return
+			}
+			else {
+				if (selection == "Apex Classes") {
+					activeTerminal.sendText('sfdx force:source:retrieve -m ApexClass');
+				}
+				if (selection == "Apex Triggers") {
+					activeTerminal.sendText('sfdx force:source:retrieve -m ApexTrigger');
+				}
+				if (selection == "VF Pages") {
+					activeTerminal.sendText('sfdx force:source:retrieve -m ApexPage');
+				}
+				if (selection == "Lightning Components") {
+					activeTerminal.sendText('sfdx force:source:retrieve -m LightningComponentBundle');
+				}
+				if (selection == "Static Resources") {
+					activeTerminal.sendText('sfdx force:source:retrieve -m StaticResource');
+				}
+			}
+		})
+	})
 }
 
 // this method is called when your extension is deactivated

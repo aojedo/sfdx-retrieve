@@ -1,7 +1,7 @@
 # sfdx-retrieve README
 
 Salesforce DX extension for retrieving Metadata using the active credentials.
-The extension includes different commands for different Metadata types.
+The extension includes a commands for different Metadata types, popping up a Selections menu in the Palette.
 There is no need to use a package.xml to perform the retrieve.
 
 ![SFDX Retrieve Demo](demo/sfdx-retrieve-demo.gif)
@@ -9,7 +9,7 @@ There is no need to use a package.xml to perform the retrieve.
 ## Features
 
 This extension sends the following command to the Terminal: sfdx force:source:retrieve -m META_TYPE.
-It has support for the following Metadata types: ApexClass, ApexTrigger, LightningComponentBundle and ApexPage.
+It has support for the following Metadata types: ApexClass, ApexTrigger, LightningComponentBundle, ApexPage and StaticResource.
 
 ## Requirements
 
@@ -22,4 +22,4 @@ https://github.com/aojedo/sfdx-retrieve.git
 
 ### 1.0.0
 
-Initial release of sfdx-retrieve
+Added a Selections menu in the Palette. Now there is just one comand 
