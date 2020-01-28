@@ -1,7 +1,7 @@
-# sfdx-retrieve README
+# sfdx-retrieve
 
 Salesforce DX extension for retrieving Metadata using the active credentials.
-The extension includes a commands for different Metadata types, popping up a Selections menu in the Palette.
+The extension includes a command for different Metadata types, popping up a Selections menu in the Palette.
 There is no need to use a package.xml to perform the retrieve.
 
 ![SFDX Retrieve Demo](demo/sfdx-retrieve-demo.gif)
@@ -14,12 +14,12 @@ It has support for the following Metadata types: ApexClass, ApexTrigger, Lightni
 ## Requirements
 
 SFDX CLI is required and you have to be in a SDFX project folder to use this extension.
-It will perform best if the DX project context is already loaded (you can see the any of the SFDX CLI extension components, like the connection to the default Org in the blue tab on the bottom)
+It will perform best if the SFDX extension is already loaded (you can see any of the SFDX CLI extension components, like the connection to the default Org in the blue tab on the bottom)
 
 ## Repository
 https://github.com/aojedo/sfdx-retrieve.git
 
 
-### 1.0.0
+### 1.0.1
 
-Added a Selections menu in the Palette. Now there is just one comand 
+Updated README
